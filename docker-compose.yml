@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"  # ローカルの8000ポートをコンテナの8000ポートにマッピング
+    depends_on:
+      - db  # データベースサービスが先に起動するように設定
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/dbname  # データベース接続情報
+
+  db:
+    image: postgres:13  # PostgreSQL 13の公式イメージを使用
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dbname
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # 永続化のためのボリューム設定
+
+volumes:
+  postgres_data:  # データ永続化のためのボリューム定義
