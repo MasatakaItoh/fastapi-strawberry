@@ -59,7 +59,9 @@ def upgrade() -> None:
     op.create_table(
         "user_projects",
         sa.Column("user_id", sa.Integer(), sa.ForeignKey("users.id"), primary_key=True),
-        sa.Column("project_id", sa.Integer(), sa.ForeignKey("projects.id"), primary_key=True),
+        sa.Column(
+            "project_id", sa.Integer(), sa.ForeignKey("projects.id"), primary_key=True
+        ),
     )
     # ### end Alembic commands ###
 
