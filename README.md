@@ -15,3 +15,10 @@ make format
 ```
 
 use: https://docs.astral.sh/ruff/
+
+## Migration
+
+```
+poetry run alembic revision --autogenerate -m "message"
+poetry run alembic upgrade head
+```

@@ -11,10 +11,11 @@ fastapi = "^0.115.4"
 strawberry-graphql = "^0.247.1"
 sqlalchemy = "^2.0.36"
 asyncpg = "^0.30.0"
-databases = "^0.9.0"
 bcrypt = "^4.2.0"
 python-jose = "^3.3.0"
 uvicorn = "^0.32.0"
+alembic = "^1.13.2"
+psycopg2-binary = "^2.9.10"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.2"
