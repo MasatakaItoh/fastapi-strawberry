@@ -5,7 +5,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 DATABASE_URL = "postgresql://user:password@db:5432/dbname"
 
 # エンジンの作成
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, echo=True)
 
 # セッションの作成
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

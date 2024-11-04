@@ -15,6 +15,23 @@ class Project:
     tasks: List["Task"] = strawberry.field(default_factory=list)
 
 
+@strawberry.type
+class ProjectPayload(Project):
+    pass
+
+
+@strawberry.input
+class ProjectInput:
+    id: str
+
+
+@strawberry.input
+class ProjectCreateInput:
+    name: str
+    description: Optional[str] = None
+    owner_id: int
+
+
 # Task
 
 
@@ -41,6 +58,11 @@ class User:
 @strawberry.type
 class UserPayload(User):
     pass
+
+
+@strawberry.input
+class UserInput:
+    id: str
 
 
 @strawberry.input

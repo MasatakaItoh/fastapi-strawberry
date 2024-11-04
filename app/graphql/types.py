@@ -15,7 +15,7 @@ class Project(BaseModel):
     tasks: List["Task"] = strawberry.field(default_factory=list)
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ProjectCreate(BaseModel):
@@ -34,7 +34,7 @@ class Task(BaseModel):
     project_id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class TaskCreate(BaseModel):
@@ -53,7 +53,7 @@ class User(BaseModel):
     projects: List["Project"] = strawberry.field(default_factory=list)
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UserCreate(BaseModel):
